@@ -1,0 +1,35 @@
+{                                  
+    "count": 1,                                   
+    "next": null,                              
+    "previous": null,                     
+    "results": [                              
+        {
+            "name": {
+                "de-informal": "Podstock 2019"
+            },
+            "slug": "2019",
+            "live": false,
+            "currency": "EUR",
+            "date_from": "2019-06-07T14:00:00Z",
+            "date_to": "2019-06-10T14:00:00Z",
+            "date_admission": null,
+            "is_public": false,
+            "presale_start": null,
+            "presale_end": null,
+            "location": {
+                "de-informal": "Kulturherberge e.V."
+            },
+            "has_subevents": false,
+            "meta_data": {},
+            "plugins": [
+                "pretix.plugins.reports",
+                "pretix.plugins.banktransfer",
+                "pretix_pages",
+                "pretix.plugins.statistics",
+                "pretix.plugins.sendmail",
+                "pretix.plugins.ticketoutputpdf",
+                "pretix.plugins.pretixdroid"
+            ]
+        }
+    ]
+}
