@@ -69,4 +69,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Shift::class)->withTimestamps()->withPivot('shiftrole_id');
     }
+
+    protected function defaultProfilePhotoUrl()
+    {
+        return "/avatar.png";
+    }
 }
