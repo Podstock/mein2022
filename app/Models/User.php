@@ -58,4 +58,15 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    public function shifts()
+    {
+        return $this->belongsToMany(Shift::class)->withTimestamps()->withPivot('shiftrole_id');
+    }
 }

@@ -4,6 +4,11 @@ import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHandshakeAngle, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+library.add(faHandshakeAngle, faSignOutAlt);
+
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 createInertiaApp({
