@@ -44,17 +44,11 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/', function () {
-        return Inertia::render('Welcome', [
-            'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register'),
-        ]);
-    });
-    Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
     /* Shift Routes */
-    Route::get('/myshifts', [ShiftController::class, 'myshifts']);
+    Route::get('/myshifts', [ShiftController::class, 'myshifts'])->name("shifts");
     Route::get('/shiftroles', [ShiftController::class, 'roles']);
     Route::get('/shifts_count', [ShiftController::class, 'shifts_count']);
     Route::get('/shifts/{day}', [ShiftController::class, 'index']);
