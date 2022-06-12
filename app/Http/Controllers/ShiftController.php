@@ -88,9 +88,7 @@ class ShiftController extends Controller
     {
         $roles = Shiftrole::all();
 
-        return ShiftroleInfoResource::collection(
-            $roles
-        );
+        return inertia('Shifts/Info', ['roles' => ShiftroleInfoResource::collection($roles)]);
     }
 
     public function myshifts()
@@ -106,7 +104,7 @@ class ShiftController extends Controller
             $ret[] = $array;
         }
 
-        return $ret;
+        return inertia('Shifts/My', [ 'data' => $ret ]);
     }
 
     public function attach(Shift $shift)
@@ -118,15 +116,15 @@ class ShiftController extends Controller
         $shift->users()->attach($user->id, ['shiftrole_id' => request()->shiftrole_id]);
         Cache::forget('shifts_count');
 
-        return redirect("/shifts/" . $shift->day);
+        return redirect()->back();
     }
 
     public function detach(Shift $shift)
     {
         $shift->users()->detach(auth()->user()->id, ['shiftrole_id' => request()->shiftrole_id]);
         Cache::forget('shifts_count');
-        
-        return redirect("/shifts/" . $shift->day);
+
+        return redirect()->back();
     }
 
     public function shifts_count()
