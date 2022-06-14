@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ShiftController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\User;
@@ -54,4 +55,12 @@ Route::middleware([
     Route::get('/shifts/{day}', [ShiftController::class, 'index']);
     Route::post('/shifts/attach/{shift}', [ShiftController::class, 'attach']);
     Route::post('/shifts/detach/{shift}', [ShiftController::class, 'detach']);
+
+    /* Project Routes */
+    Route::get('/projects', [ProjectController::class, 'index']);
+    Route::post('/projects', [ProjectController::class, 'store']);
+    Route::put('/projects/{project}', [ProjectController::class, 'update']);
+    Route::delete('/projects/{project}', [ProjectController::class, 'destroy']);
+    Route::post('/projects/{project}/logo', [ProjectController::class, 'store_logo']);
+
 });

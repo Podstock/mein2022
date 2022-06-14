@@ -6,6 +6,7 @@ import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOther
 import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue';
 import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue';
+import Projects from '@/Pages/Profile/Partials/ProjectsIndexForm.vue';
 
 defineProps({
     confirmsTwoFactorAuthentication: Boolean,
@@ -28,6 +29,7 @@ defineProps({
 
                     <JetSectionBorder />
                 </div>
+                <Projects />
             </div>
         </div>
     </AppLayout>
