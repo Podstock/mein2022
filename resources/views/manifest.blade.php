@@ -18,7 +18,7 @@
 @guest
     "start_url": "{{url('/')}}",
 @else
-    "start_url": "{{url('/login/'.auth()->user()->token)}}",
+    "start_url": "{{url('/login/pretix/'.auth()->user()->token)}}",
 @endguest
     "display": "standalone"
 }
