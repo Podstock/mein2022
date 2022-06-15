@@ -37,6 +37,14 @@ Route::get('/pretix/login/{token}', function ($token) {
     return abort(403);
 });
 
+Route::get('/offline', function () {
+    return view('offline');
+});
+
+Route::get('/site.webmanifest', function () {
+    return view('manifest');
+});
+
 
 /* Auth routes */
 Route::middleware([
