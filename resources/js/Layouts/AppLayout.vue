@@ -22,10 +22,6 @@ const switchToTeam = (team) => {
         preserveState: false,
     });
 };
-
-const logout = () => {
-    Inertia.post(route('logout'));
-};
 </script>
 
 <template>
@@ -101,13 +97,6 @@ const logout = () => {
                                         </JetDropdownLink>
 
                                         <div class="border-t border-gray-100" />
-
-                                        <!-- Authentication -->
-                                        <form @submit.prevent="logout">
-                                            <JetDropdownLink as="button">
-                                                Log Out
-                                            </JetDropdownLink>
-                                        </form>
                                     </template>
                                 </JetDropdown>
                             </div>
@@ -173,13 +162,6 @@ const logout = () => {
                                 :href="route('api-tokens.index')" :active="route().current('api-tokens.index')">
                                 API Tokens
                             </JetResponsiveNavLink>
-
-                            <!-- Authentication -->
-                            <form method="POST" @submit.prevent="logout">
-                                <JetResponsiveNavLink as="button">
-                                    Log Out
-                                </JetResponsiveNavLink>
-                            </form>
 
                             <!-- Team Management -->
                             <template v-if="$page.props.jetstream.hasTeamFeatures">
