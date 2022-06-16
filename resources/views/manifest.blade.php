@@ -20,5 +20,6 @@
 @else
     "start_url": "{{url('/pretix/login/'.auth()->user()->token)}}",
 @endguest
-    "display": "standalone"
+    "display": "standalone",
+    "scope": "https://mein.podstock.de/"
 }
