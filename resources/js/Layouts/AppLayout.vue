@@ -8,6 +8,7 @@ import JetDropdown from '@/Jetstream/Dropdown.vue';
 import JetDropdownLink from '@/Jetstream/DropdownLink.vue';
 import JetNavLink from '@/Jetstream/NavLink.vue';
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue';
+import TermsOfService from '../../../vendor/laravel/jetstream/stubs/inertia/resources/js/Pages/TermsOfService.vue';
 
 defineProps({
     title: String,
@@ -48,6 +49,9 @@ const switchToTeam = (team) => {
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </JetNavLink>
+                                <JetNavLink :href="route('drivings')" :active="route().current('drivings')">
+                                    Fahrdienst
                                 </JetNavLink>
                                 <JetNavLink :href="route('shifts')" :active="route().current('shifts')">
                                     Helfen
@@ -128,6 +132,9 @@ const switchToTeam = (team) => {
                     <div class="pt-2 pb-3 space-y-1">
                         <JetResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </JetResponsiveNavLink>
+                        <JetResponsiveNavLink :href="route('drivings')" :active="route().current('drivings')">
+                            Fahrdienst
                         </JetResponsiveNavLink>
                         <JetResponsiveNavLink :href="route('shifts')" :active="route().current('shifts')">
                             Helfen

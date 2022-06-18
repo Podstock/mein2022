@@ -79,7 +79,7 @@ class ProjectController extends Controller
             'url' => ['required', 'url'],
         ]);
 
-        /* $this->authorize('update', $project); */
+        $this->authorize('update', $project);
         $project->name = request()->name;
         $project->url = request()->url;
         $project->save();
@@ -95,7 +95,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        /* $this->authorize('delete', $project); */
+        $this->authorize('delete', $project);
         $project->delete();
     }
 }

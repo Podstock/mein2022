@@ -74,4 +74,9 @@ class User extends Authenticatable
     {
         return "/avatar.png";
     }
+
+    public function hasRole($role)
+    {
+        return in_array($role, $this->roles->pluck('name')->toArray());
+    }
 }

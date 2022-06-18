@@ -9,7 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHandshakeAngle, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 library.add(faHandshakeAngle, faSignOutAlt);
 
-const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Podstock';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

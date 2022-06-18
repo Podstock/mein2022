@@ -1,12 +1,6 @@
 var staticCacheName = "pwa-v" + new Date().getTime();
 var filesToCache = [
     '/offline',
-    '/css/app.css',
-    '/js/app.js',
-    '/android-chrome-192x192.png',
-    '/android-chrome-512x512.png',
-    '/apple-touch-icon.png',
-    '/favicon.ico',
 ];
 
 // Cache on install
