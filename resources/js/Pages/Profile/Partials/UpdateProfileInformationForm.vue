@@ -18,6 +18,8 @@ const form = useForm({
     _method: 'PUT',
     name: props.user.name,
     email: props.user.email,
+    twitter: props.user.twitter,
+    sendegate: props.user.sendegate,
     photo: null,
 });
 
@@ -143,6 +145,20 @@ const clearPhotoFileInput = () => {
                         A new verification link has been sent to your email address.
                     </div>
                 </div>
+            </div>
+            
+            <!-- Twitter -->
+            <div class="col-span-6 sm:col-span-4">
+                <JetLabel for="twitter" value="Twitter Username" />
+                <JetInput id="twitter" v-model="form.twitter" type="text" class="mt-1 block w-full" />
+                <JetInputError :message="form.errors.twitter" class="mt-2" />
+            </div>
+            
+            <!-- Sendegate -->
+            <div class="col-span-6 sm:col-span-4">
+                <JetLabel for="sendegate" value="Sendegate Username" />
+                <JetInput id="sendegate" v-model="form.sendegate" type="text" class="mt-1 block w-full" />
+                <JetInputError :message="form.errors.twitter" class="mt-2" />
             </div>
         </template>
 

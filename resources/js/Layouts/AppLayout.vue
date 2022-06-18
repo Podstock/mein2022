@@ -56,6 +56,9 @@ const switchToTeam = (team) => {
                                 <JetNavLink :href="route('shifts')" :active="route().current('shifts')">
                                     Helfen
                                 </JetNavLink>
+                                <JetNavLink :href="route('users')" :active="route().current('users')">
+                                    Teilnehmer*innen
+                                </JetNavLink>
                             </div>
                         </div>
 

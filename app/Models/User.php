@@ -27,6 +27,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'twitter',
+        'sendegate'
     ];
 
     /**
@@ -78,5 +80,19 @@ class User extends Authenticatable
     public function hasRole($role)
     {
         return in_array($role, $this->roles->pluck('name')->toArray());
+    }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    public function getAvatarAttribute()
+    {
+        $path = explode('/', $this->profile_photo_url);
+        if (count($path) > 2)
+            return "/storage/big/logos/" . $path[array_key_last($path)];
+        
+        return "/avatar.png";
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\DrivingServiceController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\User;
+use App\Http\Resources\User as UserResource;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -77,4 +78,13 @@ Route::middleware([
     Route::post('/driving_services', [DrivingServiceController::class, 'store']);
     Route::put('/driving_services/{driving_service}', [DrivingServiceController::class, 'update']);
     Route::delete('/driving_services/{driving_service}', [DrivingServiceController::class, 'destroy']);
+
+    /* Teilnehmer*innen */
+    Route::get(
+        '/users',
+        function () {
+            $users = User::with('projects')->orderBy('name')->get();
+            return inertia('Users/Index', ['users' => UserResource::collection($users)]);
+        }
+    )->name("users");
 });
