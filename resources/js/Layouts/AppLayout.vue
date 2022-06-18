@@ -40,9 +40,9 @@ const switchToTeam = (team) => {
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <a class="no-underline" href="javascript:window.location.reload(false)">
                                 <JetApplicationMark class="block h-9 w-auto" />
-                                </Link>
+                                </a>
                             </div>
 
                             <!-- Navigation Links -->
