@@ -59,6 +59,8 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+        'avatar',
+        'avatar_tiny',
     ];
 
 
@@ -85,6 +87,15 @@ class User extends Authenticatable
     public function projects()
     {
         return $this->hasMany(Project::class);
+    }
+
+    public function getAvatarTinyAttribute()
+    {
+        $path = explode('/', $this->profile_photo_url);
+        if (count($path) > 2)
+            return "/storage/tiny/logos/" . $path[array_key_last($path)];
+        
+        return "/avatar.png";
     }
 
     public function getAvatarAttribute()

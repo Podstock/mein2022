@@ -7,7 +7,8 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "soketi": "soketi start"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.11.0",
@@ -17,10 +18,12 @@
         "@tailwindcss/typography": "^0.5.2",
         "@vue/compiler-sfc": "^3.2.31",
         "axios": "^0.27",
+        "laravel-echo": "^1.11.7",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.2",
+        "pusher-js": "^7.1.1-beta",
         "tailwindcss": "^3.0.0",
         "vue": "^3.2.31",
         "vue-loader": "^17.0.0"
@@ -30,6 +33,7 @@
         "@fortawesome/free-solid-svg-icons": "^6.1.1",
         "@fortawesome/vue-fontawesome": "^3.0.0",
         "@heroicons/vue": "^1.0.6",
+        "@soketi/soketi": "^1.2.0",
         "vue-avatar-cropper": "^6.0.9"
     }
 }

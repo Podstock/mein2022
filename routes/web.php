@@ -6,7 +6,10 @@ use App\Http\Controllers\DrivingServiceController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\User;
+use App\Models\Chat;
+use App\Events\ChatSent;
 use App\Http\Resources\User as UserResource;
+use App\Http\Resources\Chat as ChatResource;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -87,4 +90,20 @@ Route::middleware([
             return inertia('Users/Index', ['users' => UserResource::collection($users)]);
         }
     )->name("users");
+
+    /* Chats */
+    Route::get('/chats', function () {
+        return ChatResource::collection(Chat::with('user')->get());
+    });
+    Route::post('/chats', function () {
+        $message = request()->message;
+        if (empty($message))
+            return abort(400);
+        $chat = new Chat;
+        $chat->content = request()->message;
+        $chat->user_id = auth()->user()->id;
+        $chat->save();
+
+        event(new ChatSent(new ChatResource($chat)));
+    });
 });
