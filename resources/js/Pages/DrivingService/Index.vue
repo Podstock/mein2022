@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import { useForm } from '@inertiajs/inertia-vue3'
+import { useForm, Link } from '@inertiajs/inertia-vue3'
 import JetButton from '@/Jetstream/Button.vue';
 import { Inertia } from '@inertiajs/inertia'
 
@@ -61,14 +61,19 @@ let deleteDriver = (id) => {
                                     <tr v-for="service in drivings.data" :key="service.id">
                                         <td
                                             class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                                            {{ service.name }}</td>
+                                            <Link :href="'/users#' + service.user_id">
+                                            {{ service.name }}
+                                            </Link>
+                                        </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ service.day }}
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ service.time }}
                                         </td>
                                         <td
                                             class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                            <a v-if="service.user_id == user.id" href="#" @click="deleteDriver(service.id)" class="text-indigo-600 hover:text-indigo-900">Löschen<span
+                                            <a v-if="service.user_id == user.id" href="#"
+                                                @click="deleteDriver(service.id)"
+                                                class="text-indigo-600 hover:text-indigo-900">Löschen<span
                                                     class="sr-only">, {{ service.name }}</span></a>
                                         </td>
                                     </tr>
