@@ -9,7 +9,7 @@ Teilnehmer\*in eine eigene E-Mail Adresse.
 
 Hier dein Login zum Ticketsystem:
 
-https://tickets.podstock.de/podstock/2019/order/{{$order['code']}}/{{$order['secret']}}/
+https://tickets.podstock.de/podstock/2022/order/{{$order['code']}}/{{$order['secret']}}/
 
 Wo du die Änderung vornehmen kannst. Für Kindertickets (bis 14 Jahre) ist das nicht erforderlich.
 

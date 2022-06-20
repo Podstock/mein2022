@@ -1,16 +1,16 @@
 @component('mail::message')
 Hallo {{$user->name}},
 
-unter folgender Adresse kannst du dich in mein.podstock.de:
+unter folgender Adresse kannst du dich in Mein Podstock:
 
-https://mein.podstock.de/login/{{$user->token}}
+https://mein.podstock.de/pretix/login/{{$user->token}}
 
-einloggen. Das wird dieses Jahr die zentrale Anlaufstelle
+einloggen. Das wird dieses Jahr wieder die zentrale Anlaufstelle
 vom Event.
 
 Aktuell sind folgenden Funktionen enthalten:
 
-- Profil- und Projektverwaltung (Mein Profil)
+- Profil- und Projektverwaltung (Unter Profile oben rechts)
 - Teilnehmer\*innen Liste
 - Fahrgemeinschaften
 - Online Chat 

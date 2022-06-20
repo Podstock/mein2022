@@ -70,7 +70,7 @@ class PretixSyncUsers implements ShouldQueue
                         }
 
                         if (in_array($email, $emails)) {
-                            Mail::to($order['email'])->send(new PretixDuplicate($order, $email));
+                            Mail::to($order['email'])->queue(new PretixDuplicate($order, $email));
                             continue;
                         }
 
