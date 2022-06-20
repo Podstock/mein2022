@@ -41,7 +41,7 @@ const switchToTeam = (team) => {
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <a class="no-underline" href="javascript:window.location.reload(false)">
-                                <JetApplicationMark class="block h-9 w-auto" />
+                                    <JetApplicationMark class="block h-9 w-auto" />
                                 </a>
                             </div>
 
@@ -53,9 +53,11 @@ const switchToTeam = (team) => {
                                 <JetNavLink :href="route('drivings')" :active="route().current('drivings')">
                                     Fahrdienst
                                 </JetNavLink>
+                                <!--
                                 <JetNavLink :href="route('shifts')" :active="route().current('shifts')">
                                     Helfen
                                 </JetNavLink>
+                                -->
                                 <JetNavLink :href="route('users')" :active="route().current('users')">
                                     Teilnehmer*innen
                                 </JetNavLink>
@@ -139,8 +141,13 @@ const switchToTeam = (team) => {
                         <JetResponsiveNavLink :href="route('drivings')" :active="route().current('drivings')">
                             Fahrdienst
                         </JetResponsiveNavLink>
+                        <!--
                         <JetResponsiveNavLink :href="route('shifts')" :active="route().current('shifts')">
                             Helfen
+                        </JetResponsiveNavLink>
+                        -->
+                        <JetResponsiveNavLink :href="route('users')" :active="route().current('users')">
+                            Teilnehmer*innen
                         </JetResponsiveNavLink>
                     </div>
 
