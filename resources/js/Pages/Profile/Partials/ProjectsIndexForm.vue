@@ -21,6 +21,11 @@ async function destroy(project) {
     update();
 }
 
+function uploaded(project) {
+    save(project);
+    update();
+}
+
 function save(project) {
     project.post('/projects/' + project.id, { preserveScroll: true });
 }
@@ -74,7 +79,7 @@ onMounted(() => {
                 <img v-if="project.logo" :src="project.logo" class="w-24 h-24" />
                 <JetButton @click="project.logotrigger = true" type="button" class="block button mx-auto mt-2">Logo
                     ändern</JetButton>
-                <avatar-cropper @uploaded="update()" :upload-url="'/projects/' + project.id + '/logo'"
+                <avatar-cropper @uploaded="uploaded(project)" :upload-url="'/projects/' + project.id + '/logo'"
                     v-model="project.logotrigger" />
             </div>
         </template>
