@@ -1,9 +1,6 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import { useForm } from '@inertiajs/inertia-vue3'
-import JetButton from '@/Jetstream/Button.vue';
-import { Inertia } from '@inertiajs/inertia'
-
+import ScrollTop from '@/Partials/Top.vue';
 
 let props = defineProps({
     users: Object
@@ -65,5 +62,6 @@ let props = defineProps({
                 </div>
             </div>
         </div>
+    <ScrollTop />
     </AppLayout>
 </template>
