@@ -54,7 +54,7 @@ onMounted(() => {
                                         <Link :href="'/users/#' + chat.user_id" class="font-medium text-gray-900">{{ chat.name }}</Link>
                                         <span class="text-gray-500 font-medium">{{ chat.created }}</span>
                                     </div>
-                                    <div v-html="chat.content" class="mt-1 text-sm text-gray-700">
+                                    <div v-html="chat.content" class="prose mt-1 text-sm text-gray-700">
                                     </div>
                                 </div>
                             </div>

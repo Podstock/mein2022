@@ -7,10 +7,13 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\User;
 use App\Models\Chat;
+use App\Models\Bordentry;
 use App\Events\ChatSent;
 use App\Http\Resources\User as UserResource;
+use App\Http\Resources\Bordentry as BordentryResource;
 use App\Http\Resources\Chat as ChatResource;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +98,7 @@ Route::middleware([
     Route::get('/chats', function () {
         return ChatResource::collection(Chat::with('user')->get());
     });
+
     Route::post('/chats', function () {
         $message = request()->message;
         if (empty($message))
@@ -105,5 +109,29 @@ Route::middleware([
         $chat->save();
 
         event(new ChatSent(new ChatResource($chat)));
+    });
+
+    /* Pinwand */
+    Route::get('/bordentries', function () {
+        return inertia('Bordentries/Index', ['bordentries' => BordentryResource::collection(Bordentry::with('user')->get())]);
+    })->name('bordentries');
+
+    Route::post('/bordentries', function () {
+        request()->validate([
+            'content' => ['required'],
+        ]);
+
+        $chat = new Bordentry;
+        $chat->content = request()->content;
+        $chat->user_id = auth()->user()->id;
+        $chat->save();
+
+        return redirect()->back();
+    });
+
+    Route::delete('/bordentries/{bordentry}', function (Bordentry $bordentry) {
+        Gate::authorize('delete', $bordentry);
+        $bordentry->delete();
+        return redirect()->back();
     });
 });

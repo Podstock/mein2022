@@ -53,6 +53,9 @@ const switchToTeam = (team) => {
                                 <JetNavLink :href="route('drivings')" :active="route().current('drivings')">
                                     Fahrdienst
                                 </JetNavLink>
+                                <JetNavLink :href="route('bordentries')" :active="route().current('bordentries')">
+                                    Pinnwand
+                                </JetNavLink>
                                 <!--
                                 <JetNavLink :href="route('shifts')" :active="route().current('shifts')">
                                     Helfen
@@ -140,6 +143,9 @@ const switchToTeam = (team) => {
                         </JetResponsiveNavLink>
                         <JetResponsiveNavLink :href="route('drivings')" :active="route().current('drivings')">
                             Fahrdienst
+                        </JetResponsiveNavLink>
+                        <JetResponsiveNavLink :href="route('bordentries')" :active="route().current('bordentries')">
+                            Pinnwand
                         </JetResponsiveNavLink>
                         <!--
                         <JetResponsiveNavLink :href="route('shifts')" :active="route().current('shifts')">
@@ -239,7 +245,7 @@ const switchToTeam = (team) => {
                 <slot />
             </main>
             <footer class="mt-8 text-sm text-gray-400 text-center">
-            Version 0.1.0
+                Version 0.1.0
             </footer>
         </div>
     </div>
