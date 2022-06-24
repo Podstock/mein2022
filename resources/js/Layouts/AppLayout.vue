@@ -245,7 +245,7 @@ const switchToTeam = (team) => {
                 <slot />
             </main>
             <footer class="mt-8 text-sm text-gray-400 text-center">
-                Version 0.2.0
+                Version 0.3.0
             </footer>
         </div>
     </div>

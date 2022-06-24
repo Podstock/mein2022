@@ -39,10 +39,10 @@ class LoginReminderEmails extends Command
      */
     public function handle()
     {
-        $users = \App\User::whereNull('remember_token')->get();
+        $users = \App\Models\User::whereNull('remember_token')->get();
 
         foreach ($users as $user) {
-            Mail::to($user->email)->send(new MyLogin($user));
+            Mail::to($user->email)->queue(new MyLogin($user));
         }
     }
 }

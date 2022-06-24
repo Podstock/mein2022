@@ -3,17 +3,19 @@ Hallo {{$user->name}},
 
 unter folgender Adresse kannst du dich in Mein Podstock:
 
-https://mein.podstock.de/pretix/login/{{$user->token}}
+@component('mail::button', ['url' => 'https://mein.podstock.de/pretix/login/'. $user->token ])
+Einloggen
+@endcomponent
 
-einloggen. Das wird dieses Jahr wieder die zentrale Anlaufstelle
-vom Event.
+Das wird dieses Jahr wieder die zentrale Anlaufstelle vom Event.
 
 Aktuell sind folgenden Funktionen enthalten:
 
 - Profil- und Projektverwaltung (Unter Profile oben rechts)
 - Teilnehmer\*innen Liste
 - Fahrgemeinschaften
-- Online Chat 
+- Pinnwand
+- Online Chat
 
 Wir haben auch noch ein paar Funktionen mehr in Planung
 und informieren dich sobald diese freigeschaltet sind.
@@ -21,7 +23,7 @@ und informieren dich sobald diese freigeschaltet sind.
 Noch ein Tipp:
 
 Rufe die Login URL am besten schon mal auf deinem Smartphone
-auf und lege die Seite mittels: 
+auf und lege die Seite mittels:
 
 - Optionen "Zum Startbildschirm hinzufügen" (Android)
 
