@@ -39,7 +39,7 @@ let detachRole = (shiftid, shiftroleid) => {
         </template>
 
         <div v-if="data.length == 0" class="text-center mt-8">
-            <h3 class="mt-2 text-base font-medium text-gray-900">Du hast noch keine Schichten ausgewält</h3>
+            <h3 class="mt-2 text-base font-medium text-gray-900">Du hast noch keine Schichten ausgewählt</h3>
             <div class="mt-6">
                 <Link href="/shifts/day1"
                     class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-lime-600 hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500">
@@ -50,7 +50,7 @@ let detachRole = (shiftid, shiftroleid) => {
                         d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
                         clip-rule="evenodd" />
                 </svg>
-                Zu den Schichten
+                Offene Schichten
                 </Link>
             </div>
         </div>
