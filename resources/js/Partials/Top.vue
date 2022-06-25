@@ -27,7 +27,7 @@ onMounted(() => {
 <template>
     <!-- Back to top button -->
     <button v-if="showScroll" @click="backToTop()" type="button" data-mdb-ripple="true" data-mdb-ripple-color="light"
-        class="inline-block p-3 bg-lime-700 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-lime-600 hover:shadow-lg focus:bg-lime-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lime-800 active:shadow-lg transition duration-150 ease-in-out bottom-5 right-5 fixed"
+        class="z-50 inline-block p-3 bg-lime-700 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-lime-600 hover:shadow-lg focus:bg-lime-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lime-800 active:shadow-lg transition duration-150 ease-in-out bottom-5 right-5 fixed"
         id="btn-back-to-top">
         <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-4 h-4" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
