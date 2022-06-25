@@ -18,8 +18,8 @@ let props = defineProps({
         <div class="max-w-7xl mx-auto pt-4 px-1 sm:px-4 lg:px-8">
             <div class="flex flex-wrap -mx-1 lg:-mx-4">
                 <div v-for="user in users.data" class="my-1 px-1 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 lg:my-4 lg:px-4 mb-6"
-                    :id="user.id" :key="user.id">
-                    <article class="overflow-hidden rounded-lg shadow-md h-full bg-white">
+                    :key="user.id">
+                    <article :id="user.id" class="target:border-lime-600 target:border-4 overflow-hidden rounded-lg shadow-md h-full bg-white">
                         <img v-if="user.avatar" :src="user.avatar" class="block h-auto w-full" loading="lazy" />
                         <header class="flex items-center justify-between leading-tight px-2 md:px-4 py-2">
                             <h1 class="text-lg">

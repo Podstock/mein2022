@@ -45,13 +45,13 @@ onMounted(() => {
                         <li v-for="chat in chats.data">
                             <div class="flex space-x-3">
                                 <div class="flex-shrink-0">
-                                    <Link :href="'/users/#' + chat.user_id">
+                                    <a :href="'/users/#' + chat.user_id">
                                     <img class="h-10 w-10 rounded-full" :src="chat.avatar" alt="">
-                                    </Link>
+                                    </a>
                                 </div>
                                 <div>
                                     <div class="text-sm space-x-2">
-                                        <Link :href="'/users/#' + chat.user_id" class="font-medium text-gray-900">{{ chat.name }}</Link>
+                                        <a :href="'/users/#' + chat.user_id" class="font-medium text-gray-900">{{ chat.name }}</a>
                                         <span class="text-gray-500 font-medium">{{ chat.created }}</span>
                                     </div>
                                     <div v-html="chat.content" class="prose mt-1 text-sm text-gray-700">
