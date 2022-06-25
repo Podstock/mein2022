@@ -64,6 +64,9 @@ const switchToTeam = (team) => {
                                 <JetNavLink :href="route('users')" :active="route().current('users')">
                                     Teilnehmer*innen
                                 </JetNavLink>
+                                <JetNavLink :href="route('fahrplan')" :active="route().current('fahrplan')">
+                                    Fahrplan
+                                </JetNavLink>
                             </div>
                         </div>
 
@@ -154,6 +157,9 @@ const switchToTeam = (team) => {
                         -->
                         <JetResponsiveNavLink :href="route('users')" :active="route().current('users')">
                             Teilnehmer*innen
+                        </JetResponsiveNavLink>
+                        <JetResponsiveNavLink :href="route('fahrplan')" :active="route().current('fahrplan')">
+                            Fahrplan
                         </JetResponsiveNavLink>
                     </div>
 

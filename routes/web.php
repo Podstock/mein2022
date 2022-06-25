@@ -134,4 +134,9 @@ Route::middleware([
         $bordentry->delete();
         return redirect()->back();
     });
+
+    /* Fahrplan */
+    Route::get('/fahrplan', function () {
+        return inertia('Pretalx');
+    })->name('fahrplan');
 });
