@@ -109,10 +109,6 @@ let detachRole = (shiftid, shiftroleid) => {
                                     <font-awesome-icon icon="fa-solid fa-sign-out-alt" class="-ml-1 mr-3 h-4 w-4" />
                                     Verlassen
                                 </JetButton>
-
-                                <JetButton class="inline-block bg-grey border-grey" v-if="shiftrole.status == 'full'">
-                                    Full
-                                </JetButton>
                             </div>
                         </footer>
                         <span class="list-card-header text-black" v-html="shift.description"></span>
