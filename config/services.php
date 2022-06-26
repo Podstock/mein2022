@@ -33,5 +33,9 @@ return [
 
     'pretix' => [
         'token' => env('PRETIX_TOKEN')
+    ],
+
+    'pretalx' => [
+        'token' => env('PRETALX_TOKEN')
     ]
 ];
