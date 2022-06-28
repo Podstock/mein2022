@@ -94,7 +94,7 @@ let detachRole = (shiftid, shiftroleid) => {
                                     <span class="text-xs">({{ shiftrole.found }}/{{ shiftrole.allowed }})</span>
                                     <br>
                                     <span v-for="user in shiftrole.users" class="text-sm">
-                                        <a :href="'/teilnehmerinnen/#' + user.id" class="link"> {{ user.name }},</a>
+                                        <a :href="'/users/#' + user.id" class="link"> {{ user.name }},</a>
                                     </span>
                                 </p>
 
