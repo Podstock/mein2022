@@ -94,6 +94,10 @@ Route::middleware([
         }
     )->name("users");
 
+    Route::get('/user/{user}', function (User $user) {
+        return inertia('Users/user', ['vuser' => new UserResource($user)]);
+    });
+
     /* Chats */
     Route::get('/chats', function () {
         return ChatResource::collection(Chat::with('user')->get());
