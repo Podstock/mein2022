@@ -53,7 +53,7 @@ class Shift extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Name')->rules('required'),
-            BelongsTo::make('Bereich', 'help_category', \App\Nova\HelpCategory::class),
+            BelongsTo::make('Bereich', 'help_category', \App\Nova\HelpCategory::class)->sortable(),
             Select::make('Tag', 'day')->options([
                 'day-1' => 'Mittwoch Tag -1',
                 'day0' => 'Donnerstag Tag 0',
@@ -61,7 +61,7 @@ class Shift extends Resource
                 'day2' => 'Samstag Tag 2',
                 'day3' => 'Sonntag Tag 3',
                 'day4' => 'Montag Tag 4',
-            ])->rules('required')->displayUsingLabels(),
+            ])->rules('required')->displayUsingLabels()->sortable(),
             Text::make('Time')->withMeta([
                 'extraAttributes' => [
                     'placeholder' => '23:42',
